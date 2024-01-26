@@ -16,8 +16,8 @@ console.log(typeof variable);
 
 
 let thisYear = 2024;
-let nextYear = 2025;
-console.log(thisYear === nextYear)
+let thisYearI = 2024;
+console.log(thisYear === thisYearI)
 
 let thisYear1 = 2024;
 let thisYear2 = "2024";

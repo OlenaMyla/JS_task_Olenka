@@ -36,20 +36,20 @@ function longestCommonPrefix(strs) {
     if (strs.length === 0) return '';
     let prefix = " ";
     for (let i = 0; i < strs[0].length; i++) {
-        for (let j = 1; j < strs.length; j++) {
-            if (i >= strs[j].length || strs[j][i] !== strs[0][i]) {
-                return prefix;
-            }
+        let char = strs[0][i];
+
+        if (strs.some(str => str[i] !== char)) {
+             break;
         }
-        prefix += strs[0][i];
+
+        prefix += char;
     }
 
     return prefix;
-};
-let input = ["flower", "flow", "flight"];
-let result = longestCommonPrefix(input);
+}
+let hasPrefix = ["flower", "flow", "flight"];
+console.log(longestCommonPrefix(hasPrefix));
 
-let example2 = ["dog", "racecar", "car"];
-console.log(longestCommonPrefix(example2));
+let hasNoPrefix = ["dog", "racecar", "car"];
+console.log(longestCommonPrefix(hasNoPrefix));
 
-console.log(result);
